@@ -10,20 +10,20 @@ function Login() {
     const [password, setPassword] = useState('');
 
     const handleLogin = async (event) => {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault(); 
 
         try {
             const response = await axios.post('http://127.0.0.1:8000/api/login', {
                 email,
                 password,
             });
-            console.log(response.data)            
             const token  = response.data.user.token;
-            console.log(token)
+            const data  = response.data.user.id;
+            console.log(data)
             if (token) {
                 localStorage.setItem('jwtToken', token);
+                localStorage.setItem('userData',data);
                 setAuthToken(token);
-
                 window.location.href='http://localhost:3000/display'
             }
         } catch (error) {

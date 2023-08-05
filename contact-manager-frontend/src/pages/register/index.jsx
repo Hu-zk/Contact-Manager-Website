@@ -18,7 +18,7 @@ function Register() {
                 email,
                 password,
             });
-            console.log(response.data)            
+            console.log(response.data)
             window.location.href='http://localhost:3000/login'
 
         } catch (error) {

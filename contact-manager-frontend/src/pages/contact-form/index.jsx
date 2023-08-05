@@ -1,8 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react';
+import axios from 'axios';
 import Navbar from "../../components/Nav-bar";
 import "../../styles/home.css"
 
 function Form() {
+
+    const [user_id, setUserId] = useState('');
+
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [longitude, setLongitude] = useState('');
+    const [latitude, setLatitude] = useState('');
+
+    const handleLogin = async (event) => {
+        event.preventDefault(); 
+
+        try {
+            const token = localStorage.getItem('jwtToken');
+
+            const user_id = localStorage.getItem('userData');
+            // console.log(data)
+            // setUserId(data);
+            // console.log(user_id)
+            
+            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+            const response = await axios.post('http://127.0.0.1:8000/api/add', {
+                name,
+                phone,
+                longitude,
+                latitude,
+                user_id
+            });
+
+            console.log(response.data)
+
+        } catch (error) {
+            console.error('Login failed:', error);
+        }
+    };
+
     return (
         <>
             <Navbar className="nav"/>
@@ -14,25 +51,25 @@ function Form() {
 
                     <div className="label-input">
                         <label htmlFor="name">Name </label>
-                        <input id="name" name="name" type="text" required placeholder="Contact Name" tabindex="10"/>
+                        <input id="name" name="name" type="text" required placeholder="Contact Name" value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
 
                     <div className="label-input">
                         <label htmlFor="phone">Phone </label>
-                        <input id="phone" name="phone" type="text" required placeholder="Phone Number" tabindex="10"/>
+                        <input id="phone" name="phone" type="text" required placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
 
                     <div className="label-input">
                         <label htmlFor="longitude">longitude</label>
-                        <input id="longitude" name="longitude" type="text" required placeholder="longitude address" tabindex="10"/>
+                        <input id="longitude" name="longitude" type="text" required placeholder="longitude address" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
                     </div>
 
                     <div className="label-input">
                         <label htmlFor="latitude">latitude</label>
-                        <input id="latitude " name="latitude " type="text" required placeholder="latitude address" tabindex="10"/>
+                        <input id="latitude " name="latitude " type="text" required placeholder="latitude address" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
                     </div> <br/>
 
-                    <button type="submit" id="sign-up">Add Contact</button> <br/>
+                    <button type="submit" id="sign-up" onClick={handleLogin}>Add Contact</button> <br/>
                 </form>
             </div>
             </div>
