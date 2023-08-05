@@ -65,7 +65,7 @@ class ContactController extends Controller
         ]);
 
         $contact = Contact::where('id', $request->id)->first();
-        $address = Address::where('id', $contact->address_id)->first();
+        $address = Address::find($contact->address_id);
 
         if (!$contact) {
             return response()->json([

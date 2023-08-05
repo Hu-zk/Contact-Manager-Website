@@ -12,11 +12,11 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('unautharized', 'unautharized')->name("unautharized");
 });
 
-Route::post('display', [ContactController::class, 'display']);
-Route::post('update', [ContactController::class, 'update']);
-Route::post('add', [ContactController::class, 'add']);
 Route::middleware('auth:api')->group(function () {
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('refresh', [AuthController::class, 'refresh']);
+    Route::post('display', [ContactController::class, 'display']);
+    Route::post('update', [ContactController::class, 'update']);
+    Route::post('add', [ContactController::class, 'add']);
     Route::post('delete', [ContactController::class, 'delete']);
 });
