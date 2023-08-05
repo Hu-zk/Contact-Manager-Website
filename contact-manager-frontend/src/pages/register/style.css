@@ -7,13 +7,19 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   font-size: 15px;
   line-height: 1.4286;
+  min-height: 100vh;
+} */
+
+.body-container {
+  font-size: 15px;
+  line-height: 1.4286;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background-color: rgb(255, 252, 232);
 }
 
@@ -35,7 +41,6 @@ body {
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-  height: 10em;
   width: 100%;
 }
 

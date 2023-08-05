@@ -4,6 +4,9 @@ import  { setAuthToken } from './services/api';
 import { BrowserRouter, Routes,Route } from "react-router-dom";
 import Register from './pages/register';
 import Login from './pages/login';
+import DisplayContacts from './pages/display-contacts';
+import Map from './pages/map';
+import Form from './pages/contact-form';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -52,14 +55,17 @@ function App() {
         </>
       )}
     </div>
+
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route path='register' element={<Register/>}></Route>
-      <Route path='login' element={<Login/>}></Route>
-      <Route path='' element=''></Route>
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+      <Routes>
+        <Route path='register' element={<Register/>}></Route>
+        <Route path='login' element={<Login/>}></Route>
+        <Route path='display' element={<DisplayContacts/>}></Route>
+        <Route path='form' element={<Form/>}></Route>
+        <Route path='map' element={<Map/>}></Route>
+      </Routes>
+      </BrowserRouter>
   );
 }
 
