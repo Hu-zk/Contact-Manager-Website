@@ -17,9 +17,8 @@ function Login() {
                 email,
                 password,
             });
-            console.log(response.data)
-            
-            const { token } = response.data;
+            console.log(response.data)            
+            const token  = response.data.user.token;
             console.log(token)
             if (token) {
                 localStorage.setItem('jwtToken', token);
@@ -41,7 +40,7 @@ function Login() {
                     </h1>
                 </div>
 
-                <form id="form" onSubmit={handleLogin}>
+                <form id="form" >
 
                     <div className="user-info">
 
