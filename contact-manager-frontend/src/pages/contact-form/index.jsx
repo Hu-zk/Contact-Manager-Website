@@ -5,7 +5,7 @@ import "../../styles/home.css"
 
 function Form() {
 
-    const [user_id, setUserId] = useState('');
+    // const [user_id, setUserId] = useState('');
 
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');

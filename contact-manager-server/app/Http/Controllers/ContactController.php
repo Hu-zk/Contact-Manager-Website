@@ -8,9 +8,9 @@ use App\Models\Address;
 
 class ContactController extends Controller
 {
-    public function display(Request $request)
+    public function display()
     {
-        $contacts = Contact::where('user_id', $request->id)->get();
+        $contacts = Contact::all();
         return response()->json([
             'status' => 'success',
             'data' => $contacts,
@@ -36,16 +36,11 @@ class ContactController extends Controller
             ]);
         }
 
-        $address = Address::create([
-            'latitude' => $request->latitude,
-            'longitude' => $request->longitude,
-        ]);
-
         $contact = Contact::create([
             'name' => $request->name,
             'phone' => $request->phone,
-            'user_id' => $request->user_id,
-            'address_id' => $address->id,
+            'latitude' => $request->latitude,
+            'longitude' => $request->longitude,
         ]);
 
         return response()->json([
@@ -65,7 +60,6 @@ class ContactController extends Controller
         ]);
 
         $contact = Contact::where('id', $request->id)->first();
-        $address = Address::find($contact->address_id);
 
         if (!$contact) {
             return response()->json([
@@ -74,12 +68,11 @@ class ContactController extends Controller
             ]);
         }
 
-        $address->latitude = $request->latitude;
-        $address->longitude = $request->longitude;
-        $address->save();
 
         $contact->name = $request->name;
         $contact->phone = $request->phone;
+        $contact->latitude = $request->latitude;
+        $contact->longitude = $request->longitude;
         $contact->save();
 
         return response()->json([
