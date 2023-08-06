@@ -155,6 +155,14 @@ a:hover {
   color: rgb(247, 183, 6);
 }
 
+.photo-and-desc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5em;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .table-container {
   display: flex;
   justify-content: center;
