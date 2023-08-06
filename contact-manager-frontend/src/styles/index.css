@@ -16,7 +16,7 @@ body {
   line-height: 1.4286;
   min-height: 100vh;
   background-color: #fff;
-  background-color: #6c6c6c;
+  background-color: #bbbbbb;
 }
 
 .nav-title {
@@ -161,7 +161,20 @@ a:hover {
   gap: 5em;
   justify-content: space-around;
   align-items: center;
+  border: #212121 solid 1pt;
+  border-radius: 1em;
+  padding: 1.5em;
+  padding-left: 2em;
+  background-color: #3f3f3f;
 }
+
+.contact_description_list {
+  color: #ffffff;
+}
+
+/* .back {
+  border: white solid 1pt;
+} */
 
 .table-container {
   display: flex;
