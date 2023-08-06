@@ -3,6 +3,9 @@ import { BrowserRouter, Routes,Route } from "react-router-dom";
 import DisplayContacts from './pages/display-contacts';
 import Map from './pages/map';
 import Add from './pages/contact-form';
+import 'leaflet/dist/leaflet.css';
+import 'react-leaflet-markercluster/dist/styles.min.css';
+
 
 function App() {
 
