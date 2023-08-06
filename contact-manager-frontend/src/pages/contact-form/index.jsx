@@ -30,8 +30,8 @@ function Form() {
     return (
         <>
             <Navbar className="nav"/>
-            <div className="body-container">
-                <div className="container">
+            <div className="add-contact-content">
+                <div className="form-container">
 
                     <form id="form">
 
@@ -57,6 +57,21 @@ function Form() {
 
                         <button type="submit" id="sign-up" onClick={handleLogin}>Add Contact</button> <br/>
                     </form>
+                </div>
+                <div class="table-container">
+                    <table id="productsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>longitude</th>
+                                <th>latitude</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsBody">
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </>

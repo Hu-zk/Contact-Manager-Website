@@ -9,8 +9,8 @@ function App() {
   return (
       <BrowserRouter>
       <Routes>
-        <Route path='display' element={<DisplayContacts/>}></Route>
         <Route path='/' element={<Form/>}></Route>
+        <Route path='display' element={<DisplayContacts/>}></Route>
         <Route path='map' element={<Map/>}></Route>
       </Routes>
       </BrowserRouter>
