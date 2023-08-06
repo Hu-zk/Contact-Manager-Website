@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from "../../components/Nav-bar";
-import Form from "../../components/Form";
+import Form from "../../components/ContactForm";
 import axios from 'axios';
 import List from '../../components/ContactsList';
 
