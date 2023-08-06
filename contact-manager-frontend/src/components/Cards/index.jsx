@@ -5,7 +5,6 @@ function Cards({contacts}) {
     return (
         <div className="table-container">
             <div className="photo-and-desc">
-
                 {contacts.map((contacts,index)=>(
                     <div className="back" key={index}>
                         <ul className="contact_description_list"><b>{contacts.name}</b>

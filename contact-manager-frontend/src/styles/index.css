@@ -65,6 +65,7 @@ nav {
 
 .add-contact-content {
   background-color: #e1e1e1;
+  background-color: #bbbbbb;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -76,7 +77,6 @@ nav {
   background: #fff;
   padding: 1em 1.5em;
   margin: 3em;
-  /* width: 27em; */
   height: fit-content;
   align-self: center;
   display: flex;
@@ -158,23 +158,28 @@ a:hover {
 .photo-and-desc {
   display: flex;
   flex-wrap: wrap;
-  gap: 5em;
+  gap: 3em;
   justify-content: space-around;
   align-items: center;
-  border: #212121 solid 1pt;
-  border-radius: 1em;
-  padding: 1.5em;
-  padding-left: 2em;
-  background-color: #3f3f3f;
 }
 
 .contact_description_list {
   color: #ffffff;
+  list-style: square;
+  margin: 0;
+  padding-top: 8px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-/* .back {
+.back {
+  border: #212121 solid 1pt;
+  border-radius: 1em;
+  background-color: #3f3f3f;
+  padding: 1.5em;
+  padding-left: 2em;
   border: white solid 1pt;
-} */
+}
 
 .table-container {
   display: flex;
@@ -193,21 +198,16 @@ th,
 td {
   text-align: left;
   padding: 8px;
-  border-bottom: 1px solid #ddd;
+}
+
+tr {
+  border: 2px solid #333333;
+  background-color: #dfdfdf;
 }
 
 th {
   background-color: #f2f2f2;
   color: #444;
-}
-
-.product_description_list {
-  list-style: square;
-  margin: 0;
-  padding-top: 8px;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #a68d60;
 }
 
 .footer {
@@ -234,6 +234,10 @@ th {
     justify-content: center;
     align-items: center;
     height: auto;
+  }
+
+  .add-contact-content {
+    flex-direction: column;
   }
 
   .footer {
