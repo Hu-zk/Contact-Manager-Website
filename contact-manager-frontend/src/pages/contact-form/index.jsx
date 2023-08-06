@@ -5,8 +5,6 @@ import "../../styles/home.css"
 
 function Form() {
 
-    // const [user_id, setUserId] = useState('');
-
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [longitude, setLongitude] = useState('');
@@ -15,22 +13,12 @@ function Form() {
     const handleLogin = async (event) => {
         event.preventDefault(); 
 
-        try {
-            const token = localStorage.getItem('jwtToken');
-
-            const user_id = localStorage.getItem('userData');
-            // console.log(data)
-            // setUserId(data);
-            // console.log(user_id)
-            
-            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-
+        try {            
             const response = await axios.post('http://127.0.0.1:8000/api/add', {
                 name,
                 phone,
                 longitude,
                 latitude,
-                user_id
             });
 
             console.log(response.data)
