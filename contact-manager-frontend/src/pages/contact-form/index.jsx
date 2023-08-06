@@ -58,7 +58,7 @@ function Form() {
                         <button type="submit" id="sign-up" onClick={handleLogin}>Add Contact</button> <br/>
                     </form>
                 </div>
-                <div class="table-container">
+                <div className="table-container">
                     <table id="productsTable">
                         <thead>
                             <tr>
